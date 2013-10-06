@@ -9,7 +9,7 @@ void setup() {
   size(864, 864);
   myParticles = new ArrayList<Particle>();
  
-  for (int i=0; i<500; i++) {
+  for (int i=0; i<5000; i++) {
     float rx = random(width);
     float ry = random(height);
     myParticles.add( new Particle(rx, ry));
@@ -31,10 +31,9 @@ void keyPressed() {
  
 void draw() {
   // background (255);
-
-  float gravityForcex = 10.0;
+  float gravityForcex = 0.0;
   float gravityForcey = 0.0;
-  float mutualRepulsionAmount = 10.0;
+  float mutualRepulsionAmount = random(-1, 1);
  
  
   // calculating repulsion and updating particles
