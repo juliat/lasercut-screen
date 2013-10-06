@@ -33,7 +33,7 @@ void draw() {
   // background (255);
   float gravityForcex = 0.0;
   float gravityForcey = 0.0;
-  float mutualRepulsionAmount = random(-1, 1);
+  float mutualRepulsionAmount = random(0, 1);
  
  
   // calculating repulsion and updating particles
@@ -75,7 +75,7 @@ void draw() {
   }
  
   for (int i=0; i<myParticles.size(); i++) {
-    myParticles.get(i).render(); // draw all particles
+    myParticles.get(i).render(); // draw all particl
   }
 }
 
