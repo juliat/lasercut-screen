@@ -9,7 +9,7 @@ class Particle {
   float damping;
   float mass;
   boolean bLimitVelocities = true;
-  boolean bPeriodicBoundaries = true;
+  boolean bPeriodicBoundaries = false;
   
  
   // Constructor for the Particle
@@ -19,7 +19,7 @@ class Particle {
     damping = 0.96;
     mass = 1.0;
     trail = new ArrayList<PVector>();
-    trailWidth = 9;
+    trailWidth = 5;
   }
    
   // Add a force in. One step of Euler integration.

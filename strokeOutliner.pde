@@ -37,7 +37,5 @@ void drawStrokeOutline(ArrayList<PVector> points, int strokeWidth) {
     // close line by drawing caps
     PVector endPoint = points.get(lastIndex);
     line(endPoint.x, endPoint.y, endPoint.x - strokeWidth, endPoint.y + (strokeWidth*0.5));
-    
-    noLoop();
   }
 } 
