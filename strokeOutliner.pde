@@ -11,7 +11,7 @@ void drawStrokeOutline(ArrayList<PVector> points, int strokeWidth) {
   }
   endShape();
   
-  /*
+  
   beginShape();
   // then go backwards, and shift all points down by strokeWidth, 
   // continuing the same shape
@@ -21,7 +21,7 @@ void drawStrokeOutline(ArrayList<PVector> points, int strokeWidth) {
     vertex(currentPoint.x - strokeWidth, currentPoint.y + (strokeWidth*0.5));
   }
   endShape();
-  */
+  
   
   /* delete later
    stroke(0);
@@ -30,14 +30,14 @@ void drawStrokeOutline(ArrayList<PVector> points, int strokeWidth) {
   */
   
   if (doneDrawing) {  // draw start cap
-   /* stroke(0);
+    stroke(0);
     PVector startPoint = points.get(0);
     line(startPoint.x, startPoint.y, startPoint.x - strokeWidth, startPoint.y + (strokeWidth*0.5));
 
     // close line by drawing caps
     PVector endPoint = points.get(lastIndex);
     line(endPoint.x, endPoint.y, endPoint.x - strokeWidth, endPoint.y + (strokeWidth*0.5));
-    */
+    
     noLoop();
   }
 } 

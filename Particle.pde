@@ -16,10 +16,10 @@ class Particle {
   Particle (float x, float y) {
     currentPosition = new PVector(x, y);
     vx = vy = 0;
-    damping = 0.96;
+    damping = 1;
     mass = 1.0;
     trail = new ArrayList<PVector>();
-    trailWidth = 6;
+    trailWidth = 9;
   }
    
   // Add a force in. One step of Euler integration.
@@ -57,16 +57,16 @@ class Particle {
  
   void handleBoundaries() {
     if (bPeriodicBoundaries) {
-      if (currentPosition.x > width ) currentPosition.x -= width;
-      if (currentPosition.x < 0     ) currentPosition.x += width;
-      if (currentPosition.y > height) currentPosition.y -= height;
-      if (currentPosition.y < 0     ) currentPosition.y += height;
+      if (currentPosition.x > width - margin ) currentPosition.x -= width;
+      if (currentPosition.x < margin     ) currentPosition.x += width;
+      if (currentPosition.y > height - margin) currentPosition.y -= height;
+      if (currentPosition.y < margin     ) currentPosition.y += height;
     }
     else {
-      if (currentPosition.x > width ) vx = -vx;
-      if (currentPosition.x < 0     ) vx = -vx;
-      if (currentPosition.y > height) vy = -vy;
-      if (currentPosition.y < 0     ) vy = -vy;
+      if (currentPosition.x > width - margin ) vx = -vx;
+      if (currentPosition.x < margin     ) vx = -vx;
+      if (currentPosition.y > height - margin) vy = -vy;
+      if (currentPosition.y < margin     ) vy = -vy;
     }
   }
  

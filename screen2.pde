@@ -3,15 +3,18 @@ import netP5.*;
 
 ArrayList<Particle> myParticles;
 boolean doneDrawing = false;
- 
+
+int margin;
 
 void setup() {
   size(864, 864);
   myParticles = new ArrayList<Particle>();
  
-  for (int i=0; i<5000; i++) {
-    float rx = random(width);
-    float ry = random(height);
+  margin = 50;
+
+  for (int i=0; i<400; i++) {
+    float rx = random(margin, width-margin);
+    float ry = random(margin, height-margin);
     myParticles.add( new Particle(rx, ry));
   }
   smooth();
@@ -33,7 +36,7 @@ void draw() {
   // background (255);
   float gravityForcex = 0.0;
   float gravityForcey = 0.0;
-  float mutualRepulsionAmount = random(0, 1);
+  float mutualRepulsionAmount = random(0, 2);
  
  
   // calculating repulsion and updating particles
