@@ -9,14 +9,14 @@ class Particle {
   float damping;
   float mass;
   boolean bLimitVelocities = true;
-  boolean bPeriodicBoundaries = false;
+  boolean bPeriodicBoundaries = true;
   
  
   // Constructor for the Particle
   Particle (float x, float y) {
     currentPosition = new PVector(x, y);
     vx = vy = 0;
-    damping = 1;
+    damping = 0.96;
     mass = 1.0;
     trail = new ArrayList<PVector>();
     trailWidth = 9;
@@ -56,12 +56,14 @@ class Particle {
   }
  
   void handleBoundaries() {
+    // wraparound
     if (bPeriodicBoundaries) {
       if (currentPosition.x > width - margin ) currentPosition.x -= width;
       if (currentPosition.x < margin     ) currentPosition.x += width;
       if (currentPosition.y > height - margin) currentPosition.y -= height;
       if (currentPosition.y < margin     ) currentPosition.y += height;
     }
+    // bounce
     else {
       if (currentPosition.x > width - margin ) vx = -vx;
       if (currentPosition.x < margin     ) vx = -vx;

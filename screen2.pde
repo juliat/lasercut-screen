@@ -34,9 +34,9 @@ void keyPressed() {
  
 void draw() {
   // background (255);
-  float gravityForcex = 0.0;
-  float gravityForcey = 0.0;
-  float mutualRepulsionAmount = random(0, 2);
+  float gravityForcex = 0;
+  float gravityForcey = 0.02;
+  float mutualRepulsionAmount = 1.05;
  
  
   // calculating repulsion and updating particles
